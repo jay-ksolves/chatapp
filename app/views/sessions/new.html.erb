@@ -1,0 +1,11 @@
+
+<br>
+<br>
+<div class="container" >
+<%= form_for (:session) do |f| %>
+  <%= f.label :username, 'Enter your username',class:"form-label" %>
+  <%= f.text_field :username, autocomplete: 'off' ,class: "form-control"%>
+  <br>
+  <%= f.submit 'Sign in' ,class:"btn btn-info"%>
+<% end %>
+</div>

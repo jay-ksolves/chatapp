@@ -1,0 +1,13 @@
+<br />
+<div class="container">
+    <h1>Welcome to Jerry !</h1>
+    <br />
+    <hr />
+
+    <%if current_user%>
+    <%=link_to "Chat In Private",gonowuser_path ,class: "btn btn-info"%>
+        <%=link_to "See Rooms" , gonow_path, class:"btn btn-success" %>
+            <%else%>
+                <%=link_to "Chat Now" , chatpage_path, class:"btn btn-info" %>
+                    <%end %>
+</div>

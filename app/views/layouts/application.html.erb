@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jerry</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/33c005a0aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  </head>
+  <style>
+    body {
+      background-color: rgb(36, 35, 35);
+      color: white;
+      margin: 2%;
+    }
+
+    .mbox {
+      background: linear-gradient(-80deg,
+          #ab62d6,
+          #70b2fefe,
+          #acd9e9,
+          #63edca,
+          #2cecf6,
+          rgb(14, 232, 138),
+          rgb(4, 188, 255),
+          rgb(0, 132, 255));
+      background-size: 400% 400%;
+      animation: gradient 8s ease-in infinite;
+      border-radius: 50px;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .msg-form {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 56px;
+      padding: 20px;
+      margin: 20px;
+    }
+
+
+    .msg-content {
+      width: 80%;
+      margin-right: 15px;
+      color: black;
+
+    }
+
+
+
+    <%=".msg-#{current_user&.id}" %> {
+      background-color: rgb(24, 154, 230);
+      !important;
+      padding: 18px;
+      margin: 25px;
+      border-radius: 50px;
+      width: fit-content;
+      word-wrap: break-word;
+    }
+
+    <%=".cont-#{current_user&.id}" %> {
+      display: flex;
+      justify-content: flex-end
+    }
+
+    /*
+    .msg[data-user-id] {
+      background-color: #40464c !important;
+      padding: 18px;
+      margin: 25px;
+      border-radius: 100px;
+      width: fit-content;
+    }
+
+    .cont[data-user-id] {
+      display: flex;
+      justify-content: flex-end;
+    } */
+
+    .creation-time {
+      font-size: 11px;
+      color: rgba(232, 232, 232, 0.644);
+    }
+
+    .bname {
+      font-weight: bolder;
+      letter-spacing: 3px;
+      padding-left: 5px;
+      color: #ab62d6;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;    }
+
+    .navbar {
+
+      border-radius: 100px;
+    }
+
+
+
+    .spa:hover {
+      border-color: rgb(157, 255, 0);
+      box-shadow: #d8d9da;
+      /* letter-spacing: 1.1px; */
+    }
+  </style>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+    <br />
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %> <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %> <%= yield %>
+    <script>
+      function checker() {
+        var result = confirm("Are you sure to Signout?");
+        if (result == false) {
+          event.preventDefault();
+        }
+      }
+    </script>
+  </body>
+</html>
