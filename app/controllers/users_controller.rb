@@ -1,6 +1,23 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  def new
+    @user = User.new # Initialize a new User object
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      log_in(@user) # Log in the newly registered user
+      # redirect_to root_path
+      chatpage_path
+    else
+      render 'new' # Render the registration form again with errors
+    end
+  end
+
+  # Other controller actions...
+
   def show
     @user = User.find(params[:id])
     @current_user = current_user
@@ -20,5 +37,9 @@ class UsersController < ApplicationController
   def get_name(user1, user2)
     users = [user1, user2].sort
     "private_#{users[0].id}_#{users[1].id}"
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end

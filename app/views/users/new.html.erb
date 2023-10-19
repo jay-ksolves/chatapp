@@ -1,0 +1,21 @@
+
+<br>
+<br>
+<!-- <div class="container" > -->
+<div class="container">
+  <div class="card bg-dark mx-auto p-5 m-2" style="max-width: 500px">
+    <div class="container text-center">
+      <img src="/assets/favicon.ico" alt="logo" style="height: 80px; width: 80px;">
+      <b>Welcome to Jerry!! </b>
+    </div>
+    <br>
+    <h1 class="text-center">Sign Up  to Jerry</h1>
+<%= form_for(@user) do |f| %>
+  <%= f.label :username, 'User Name', class: "form-label" %>
+  <%= f.text_field :username, autocomplete: 'off', class: "form-control", placeholder: "Enter your username" %>
+
+  <%= f.label :email, 'Email', class: "form-label" %>
+  <%= f.text_field :email, autocomplete: 'off', class: "form-control", placeholder: "Enter your email" %>
+<br>
+  <%= f.submit 'Register', class: "btn btn-info spa fa-solid" %>
+<% end %>
