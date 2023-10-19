@@ -1,18 +1,19 @@
-<br>
+<br />
 <div class="container text-center">
-    <div class="card bg-dark mx-auto" style="max-width: 500px;">
-        <div class="container">
-            <br>
-            <br>
-            <h4>Hi, <% if current_user %>
-                    <%= current_user.username %>
-                        <% end %>
-            </h4>
-            <br>
-            <p>Hope you have enjoyed using Jerry!!</p>
-            <p>
-                <%= link_to 'Go home' , root_path, class: "btn btn-success" %>
-            </p>
-        </div>
+  <div class="card bg-dark mx-auto" style="max-width: 500px">
+    <div class="container">
+      <br />
+      <br />
+      <h4>
+        Hi, <% if current_user %> <%= current_user.username %> <%else%> visitor
+        <% end %>
+      </h4>
+      <br />
+      <p>Hope you have enjoyed using Jerry!!</p>
+      <p>
+        <%= link_to 'Go home' , root_path, class: "btn btn-success spa fa
+        fa-solid" %>
+      </p>
     </div>
+  </div>
 </div>

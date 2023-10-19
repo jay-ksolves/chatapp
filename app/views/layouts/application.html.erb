@@ -113,7 +113,9 @@
       font-size: 11px;
       color: rgba(232, 232, 232, 0.644);
     }
-
+.spa{
+  letter-spacing: 1.01px;
+}
     .bname {
       font-weight: bolder;
       letter-spacing: 3px;
@@ -123,7 +125,17 @@
       font-size: 1.5em;    }
 
     .navbar {
-
+      background: linear-gradient(-40deg,
+          #eadff0,
+          #70b2fefe,
+          #acd9e9,
+          #8aed63,
+          #00f7a9,
+          rgb(160, 241, 206),
+          rgb(236, 243, 245),
+          rgb(155, 241, 241));
+      background-size: 400% 400%;
+      animation: gradient 10s ease-in infinite;
       border-radius: 100px;
     }
 
@@ -144,6 +156,9 @@
     <% end %> <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
     <% end %> <%= yield %>
+
+
+  
     <script>
       function checker() {
         var result = confirm("Are you sure to Signout?");

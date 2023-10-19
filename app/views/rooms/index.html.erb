@@ -8,7 +8,7 @@
     <%end%>
     <br />
     <%= button_to 'Sign Out' , signout_path, method: :delete ,class:"btn
-    btn-outline-dark text-light" ,onclick:"checker()"%>
+    btn-outline-dark text-light spa fa fa-solid" ,onclick:"checker()"%>
     <br />
     <hr />
     <h4 class="user_row">All Users</h4>
@@ -47,8 +47,19 @@
               <%= render partial: 'messages/message' , locals: { message: message } %>
             <% end %>
           </div>
+          
           <%= render partial: 'layouts/new_message_form' %>
+          
   </div>
+  
+
+   
 </div>
+
+  
+  <a href="">
+    <button class="btn btn-outline-info btn-lg rounded-pill fa fa-circle-up"></button>
+  </a>
+
 
 
