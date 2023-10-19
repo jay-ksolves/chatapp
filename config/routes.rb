@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   resources :rooms
   resources :users
+  # resources :users, only: %i[new create]
   resources :rooms do
     resources :messages
   end
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'aboutjerry', to: 'pages#about'
   get 'rooms/1', as: 'gonow'
   get 'users/1', as: 'gonowuser'
+  get 'users/new', to: 'user#create', as: 'signup'
   root 'pages#home'
   # root 'sessions#new'
 end
