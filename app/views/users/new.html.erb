@@ -5,7 +5,7 @@
 <div class="container">
   <div class="card bg-dark mx-auto p-5 m-2" style="max-width: 500px">
     <div class="container text-center">
-      <img src="/assets/favicon.ico" alt="logo" style="height: 80px; width: 80px;">
+      <img src="/assets/caht2.png" alt="logo" style="height: 80px; width: 80px; border-radius:50px;">
       <b>Welcome to Jerry!! </b>
     </div>
     <br>
@@ -22,13 +22,4 @@
     <%= f.submit 'Register', class: "btn btn-info spa fa-solid" %>
     <%=link_to "Sign In" ,signin_path, class: "btn btn-light spa fa fa-solid" %>
     </div>
-<% end %>
-<% if @user.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
 <% end %>
