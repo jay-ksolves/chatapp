@@ -16,8 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # Other controller actions...
-
   def show
     @user = User.find(params[:id])
     @current_user = current_user
